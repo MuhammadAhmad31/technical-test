@@ -1,0 +1,17 @@
+{
+  "name": "technical-test-monorepo",
+  "private": true,
+  "packageManager": "pnpm@10.18.1",
+  "scripts": {
+    "build": "turbo run build",
+    "dev": "turbo run dev --ui=tui",
+    "start": "turbo run start --filter=@repo/api --filter=@repo/web",
+    "start:api": "turbo run start --filter=@repo/api",
+    "start:web": "turbo run start --filter=@repo/web",
+    "typecheck": "turbo run typecheck"
+  },
+  "devDependencies": {
+    "turbo": "^2.5.8",
+    "typescript": "^5.9.3"
+  }
+}
