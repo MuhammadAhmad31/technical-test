@@ -57,6 +57,21 @@ body {
   font-size: 15px;
 }
 
+.repository-link.ant-btn {
+  height: 40px;
+  border-color: #cbd5e1;
+  border-radius: 8px;
+  color: #334155;
+  font-weight: 700;
+  box-shadow: none;
+}
+
+.repository-link.ant-btn:hover,
+.repository-link.ant-btn:focus {
+  border-color: #2563eb;
+  color: #2563eb;
+}
+
 .answer-tabs > .ant-tabs-nav {
   margin: 0;
 }

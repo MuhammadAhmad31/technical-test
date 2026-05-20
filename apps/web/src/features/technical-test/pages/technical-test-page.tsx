@@ -1,4 +1,5 @@
-import { Tabs, Typography, type TabsProps } from "antd";
+import { GithubOutlined } from "@ant-design/icons";
+import { Button, Tabs, Typography, type TabsProps } from "antd";
 import { ArrayManipulationAnswer } from "../../array-manipulation/pages/array-manipulation-answer";
 import { AuthAnswer } from "../../auth/pages/auth-answer";
 import { CheckoutAnswer } from "../../checkout/pages/checkout-answer";
@@ -6,6 +7,8 @@ import { RandomUserAnswer } from "../../random-user/pages/random-user-answer";
 import { SqlSampleAnswer } from "../../sql-sample/pages/sql-sample-answer";
 
 const { Text, Title } = Typography;
+
+const repositoryUrl = "https://github.com/MuhammadAhmad31/technical-test.git";
 
 const answerTabs: TabsProps["items"] = [
   {
@@ -45,6 +48,16 @@ export function TechnicalTestPage() {
             Dashboard Jawaban
           </Title>
         </div>
+
+        <Button
+          className="repository-link"
+          href={repositoryUrl}
+          icon={<GithubOutlined />}
+          rel="noreferrer"
+          target="_blank"
+        >
+          GitHub Repository
+        </Button>
       </section>
 
       <Tabs className="answer-tabs" defaultActiveKey="checkout" items={answerTabs} />

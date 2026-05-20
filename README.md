@@ -6,6 +6,8 @@ Monorepo Turborepo untuk technical test App Dev. Stack yang dipakai:
 - `apps/web`: React Vite TypeScript + Ant Design, ESM
 - `packages/shared`: shared API contract/type untuk frontend dan backend
 
+Repository: [MuhammadAhmad31/technical-test.git](https://github.com/MuhammadAhmad31/technical-test.git)
+
 Reviewer cukup menjalankan app lalu membuka halaman web. Semua jawaban bisa dites dari UI tanpa perlu menjalankan `curl`.
 
 ## Requirement
