@@ -12,7 +12,6 @@ export function RandomUserAnswer() {
   return (
     <AnswerCard
       endpoints={[{ method: "GET", path: "/random-users?results=10&page=1&search=" }]}
-      hideHeader
       number={4}
       summary="Daftar pengguna RandomUser dengan pencarian data."
       title="Daftar RandomUser"

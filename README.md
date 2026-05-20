@@ -28,6 +28,30 @@ cp apps/api/.env.example apps/api/.env
 cp apps/web/.env.example apps/web/.env
 ```
 
+## Menjalankan Dengan Docker
+
+Ini cara cepat untuk menjalankan aplikasi dengan docker
+
+```bash
+docker compose up --build
+```
+
+URL Docker:
+
+- Web: `http://localhost:4173`
+- API: `http://localhost:3000/api`
+
+Compose akan build dua service:
+
+- `api`: NestJS production runner
+- `web`: nginx static server untuk hasil build Vite
+
+Untuk menghentikan container:
+
+```bash
+docker compose down
+```
+
 ## Menjalankan Development
 
 ```bash
@@ -248,6 +272,7 @@ Implementasi backend:
 
 - Fetch data dari `https://randomuser.me/api/`
 - Query `results` dan `page` dinamis
+- Saat halaman pertama dibuka, frontend memanggil `results=10&page=1`
 - Response RandomUser ditransformasi menjadi contract `ListUser`
 - Search diproses di backend berdasarkan data hasil transformasi
 

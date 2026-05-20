@@ -9,7 +9,7 @@ export function useRandomUsers() {
   const [users, setUsers] = useState<RandomUserTableRow[]>([]);
   const [query, setQuery] = useState("");
   const [page, setPage] = useState(1);
-  const [loading, setLoading] = useState(false);
+  const [loading, setLoading] = useState(true);
   const debouncedQuery = useDebouncedValue(query, 400);
 
   const loadPage = useCallback(
