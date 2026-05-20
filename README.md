@@ -30,7 +30,7 @@ cp apps/api/.env.example apps/api/.env
 cp apps/web/.env.example apps/web/.env
 ```
 
-## Menjalankan Dengan Docker
+## Menjalankan Dengan Docker Local
 
 Ini cara cepat untuk menjalankan aplikasi dengan docker
 
@@ -53,6 +53,32 @@ Untuk menghentikan container:
 ```bash
 docker compose down
 ```
+
+## Menjalankan Dengan Docker Production
+
+Production memakai file override `docker-compose.prod.yml` supaya URL public tidak dicampur dengan default local.
+
+```bash
+docker compose -f docker-compose.yml -f docker-compose.prod.yml up --build -d
+```
+
+Default production URL:
+
+- Web: `http://168.110.215.16:4173`
+- API: `http://168.110.215.16:3000/api`
+
+Jika host production berubah, override dari environment:
+
+```bash
+VITE_API_URL=http://your-host:3000/api \
+CORS_ORIGINS=http://your-host:4173 \
+docker compose -f docker-compose.yml -f docker-compose.prod.yml up --build -d
+```
+
+Catatan:
+
+- `VITE_API_URL` adalah URL API yang dipanggil browser dan dibake saat build frontend.
+- `CORS_ORIGINS` adalah origin frontend yang diizinkan API, tanpa trailing slash.
 
 ## Menjalankan Development
 

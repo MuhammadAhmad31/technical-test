@@ -1,0 +1,12 @@
+services:
+  api:
+    build:
+      args:
+        VITE_API_URL: ${VITE_API_URL:-http://168.110.215.16:3000/api}
+    environment:
+      CORS_ORIGINS: ${CORS_ORIGINS:-http://168.110.215.16:4173}
+
+  web:
+    build:
+      args:
+        VITE_API_URL: ${VITE_API_URL:-http://168.110.215.16:3000/api}

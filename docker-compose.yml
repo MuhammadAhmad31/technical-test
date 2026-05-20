@@ -5,11 +5,11 @@ services:
       dockerfile: Dockerfile
       target: api-runner
       args:
-        VITE_API_URL: http://localhost:3000/api
+        VITE_API_URL: ${VITE_API_URL:-http://localhost:3000/api}
     environment:
       API_PORT: 3000
       API_PREFIX: api
-      CORS_ORIGINS: http://localhost:4173,http://127.0.0.1:4173,http://localhost:5173,http://127.0.0.1:5173
+      CORS_ORIGINS: ${CORS_ORIGINS:-http://localhost:4173,http://127.0.0.1:4173,http://localhost:5173,http://127.0.0.1:5173}
       JWT_SECRET: technical-test-docker-secret
       JWT_EXPIRES_IN: 1h
       COOKIE_SECURE: "false"
@@ -27,7 +27,7 @@ services:
       dockerfile: Dockerfile
       target: web-runner
       args:
-        VITE_API_URL: http://localhost:3000/api
+        VITE_API_URL: ${VITE_API_URL:-http://localhost:3000/api}
     depends_on:
       - api
     ports:
